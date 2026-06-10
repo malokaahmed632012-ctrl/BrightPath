@@ -1,4 +1,2 @@
-theme: jekyll-theme-cayman
-title: BrightPath
-description: Your Personal Guidance to Success
-show_downloads: false
+# Vercel deployment configuration
+# This is a static HTML/CSS/JS site, no build required
