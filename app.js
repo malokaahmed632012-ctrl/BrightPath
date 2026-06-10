@@ -19,14 +19,8 @@ function initializeApp() {
                 <li>✓ Works on all devices</li>
                 <li>✓ Offline support</li>
                 <li>✓ Secure and private</li>
-                <li>✓ QR code generation</li>
+                <li>✓ Goal tracking</li>
             </ul>
-        </div>
-        <div class="section">
-            <h2>Generate QR Code</h2>
-            <input type="text" id="qrInput" placeholder="Enter text or URL" value="https://brightpath.com">
-            <button onclick="generateQR()">Generate QR Code</button>
-            <div class="qr-container" id="qrCode"></div>
         </div>
         <div class="section">
             <h2>Get Started</h2>
@@ -50,24 +44,6 @@ function initializeApp() {
     `;
     loadGoals();
     loadProgress();
-    generateQR();
-}
-
-function generateQR() {
-    if (typeof QRCode === 'undefined') {
-        console.warn('QRCode library not loaded');
-        return;
-    }
-    const text = document.getElementById('qrInput').value || 'https://brightpath.com';
-    const qrContainer = document.getElementById('qrCode');
-    qrContainer.innerHTML = '';
-    new QRCode(qrContainer, { 
-        text: text, 
-        width: 256, 
-        height: 256,
-        colorDark: '#000000',
-        colorLight: '#ffffff'
-    });
 }
 
 function saveGoal() {
